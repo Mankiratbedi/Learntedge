@@ -4,6 +4,10 @@ from typing import List, Dict
 
 import google.generativeai as genai
 
+from dotenv import load_dotenv
+
+load_dotenv()
+
 
 def extract_viral_moments(transcript_with_timestamps: str) -> List[Dict]:
     """

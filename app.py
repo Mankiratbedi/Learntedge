@@ -1,4 +1,5 @@
 import os
+from dotenv import load_dotenv
 import tempfile
 from pathlib import Path
 from typing import Dict, List, Optional
@@ -7,6 +8,8 @@ import streamlit as st
 
 from utils.ai_engine import extract_viral_moments
 from utils.video_processor import process_video_clip
+
+load_dotenv()
 
 
 def _init_state() -> None:
