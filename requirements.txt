@@ -1,0 +1,7 @@
+streamlit
+moviepy
+mediapipe
+google-generativeai
+openai-whisper
+librosa
+python-dotenv
