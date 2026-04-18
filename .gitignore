@@ -1,2 +1,27 @@
 text venv/ __pycache__/ *.mp4 *.mp3 *.wav .env
 output/
+
+# Local Environment and Credentials
+.env
+venv/
+.venv/
+env/
+
+# Python Cache (Must ignore for a clean repo)
+**/__pycache__/
+*.py[cod]
+*$py.class
+
+# Media Files (Prevent large uploads)
+*.mp4
+*.mp3
+*.wav
+*.mov
+
+# Project Specific Folders
+temp_uploads/
+output/
+
+# Editor Settings
+.cursor/
+.vscode/
