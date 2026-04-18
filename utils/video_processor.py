@@ -1,7 +1,7 @@
 from moviepy import VideoFileClip
 import os
 
-def process_video_clip(input_path, output_filename, start_time, end_time):
+def process_video_clip(input_path, output_path, start_time, end_time):
     """
     Emergency Fallback: Crops video to 9:16 vertical using center-alignment.
     Bypasses MediaPipe to ensure the app works for the deadline.
@@ -23,7 +23,7 @@ def process_video_clip(input_path, output_filename, start_time, end_time):
         # Crop and Save
         final_clip = clip.cropped(x1=x1, y1=0, x2=x2, y2=h)
         
-        output_path = os.path.join("output", output_filename)
+        output_path = os.path.join("output", output_path)
         final_clip.write_videofile(output_path, codec="libx264", audio_codec="aac")
         
         return output_path
