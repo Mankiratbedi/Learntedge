@@ -38,7 +38,7 @@ def extract_viral_moments(transcript_with_timestamps: str) -> List[Dict]:
 
     try:
         genai.configure(api_key=api_key)
-        model = genai.GenerativeModel("gemini-1.5-flash")
+        model = genai.GenerativeModel("gemini-2.5-flash")
 
         prompt = f"""
 You are an expert social media editor.
