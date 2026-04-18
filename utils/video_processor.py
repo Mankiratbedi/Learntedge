@@ -4,7 +4,7 @@ from typing import List, Optional, Tuple
 import cv2
 import mediapipe as mp
 import numpy as np
-from moviepy.editor import VideoFileClip
+from moviepy import VideoFileClip
 
 
 def _detect_face_centers(
@@ -100,7 +100,7 @@ def process_video_clip(
         if safe_end_time <= start_time:
             raise ValueError("Time range exceeds video duration.")
 
-        subclip = clip.subclip(start_time, safe_end_time)
+        subclip = clip.subclipped(start_time, safe_end_time)
         frame_w, frame_h = int(subclip.w), int(subclip.h)
         crop_w, crop_h = _get_target_crop_size(frame_w, frame_h)
 
@@ -120,7 +120,7 @@ def process_video_clip(
         x2 = x1 + crop_w
         y2 = y1 + crop_h
 
-        final_clip = subclip.crop(x1=x1, y1=y1, x2=x2, y2=y2)
+        final_clip = subclip.cropped(x1=x1, y1=y1, x2=x2, y2=y2)
         final_clip.write_videofile(
             final_output_path,
             codec="libx264",
